@@ -1,0 +1,6 @@
+/.well-known/agent-skills/*
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+/skills/*
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain
