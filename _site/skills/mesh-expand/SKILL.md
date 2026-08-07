@@ -79,3 +79,11 @@ Deliver a markdown plan with:
 - Keep answers honest: mark "unknown" explicitly, never guess a number.
 - One actionable item is worth more than twenty vague ones.
 - Respect the project's secrets rules — never echo tokens or keys.
+
+## References
+
+- `references/REFERENCE.md` — fleet glossary + capacity numbers
+- `references/CF-TOKEN-ELI5.md` — the "mint a DNS token" visual guide
+  (super-ELI5: the two CF token types, the phonebook metaphor, the
+  click-by-click "Edit zone DNS" template). Use it whenever a fleet step
+  is blocked on a Cloudflare DNS permission.
