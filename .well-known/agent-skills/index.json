@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mesh-expand",
+      "type": "skill-md",
+      "description": "Expand a sovereign mesh + fleet — 20-question scaffold for adding nodes, hardening weak links, and growing an agent constellation.",
+      "url": "/.well-known/agent-skills/mesh-expand/SKILL.md"
+    }
+  ]
+}

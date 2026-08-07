@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mesh-expand · the sovereign fleet skill</title>
+<meta name="description" content="Scaffold expanding a sovereign mesh + fleet. 20 questions, one actionable plan. Open agent-skills format.">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🜂</text></svg>">
+<link rel="alternate" type="text/markdown" href="/skills/mesh-expand/SKILL.md">
+<style>
+  :root{--bg:#05060a;--ink:#e7e2f7;--dim:#9a93b8;--accent:#b48bff;--accent2:#62e6c9;--warn:#ffcf5c;--line:rgba(170,150,255,.18);--card:rgba(11,10,21,.72)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:ui-monospace,"SF Mono",monospace;min-height:100vh;padding:3rem 1.5rem 4rem}
+  .wrap{max-width:820px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding-bottom:1.4rem;margin-bottom:2rem}
+  .tagline{color:var(--accent2);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.6rem}
+  h1{font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:.03em}
+  h1 .mesh{color:var(--accent)} h1 .fleet{color:var(--accent2)}
+  .sub{color:var(--dim);font-size:.9rem;line-height:1.7;margin-top:.8rem;max-width:560px}
+  .install{margin:1.6rem 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.3rem}
+  .install .h{font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+  code{background:#0a0b12;border:1px solid var(--line);border-radius:6px;padding:.25rem .55rem;font-size:.82rem;color:var(--accent2)}
+  .row{display:block;margin:.45rem 0;color:var(--ink);font-size:.85rem}
+  .row code{display:inline-block;margin-right:.4rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.1rem}
+  .card .n{color:var(--accent);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.5rem}
+  .card p{color:var(--dim);font-size:.8rem;line-height:1.6}
+  .compat{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0}
+  .compat span{border:1px solid var(--line);border-radius:999px;padding:.28rem .8rem;font-size:.72rem;color:var(--dim)}
+  h2{font-size:1.1rem;letter-spacing:.04em;margin:2rem 0 1rem;color:var(--ink)}
+  h2 .h{color:var(--accent2)}
+  .lane{margin-top:2.5rem;border:1px solid rgba(98,230,201,.3);border-radius:12px;padding:1rem 1.2rem;background:rgba(98,230,201,.05);display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+  .lane .h{color:var(--accent2);font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;flex:1 1 100%;margin-bottom:.3rem}
+  .lane a{color:var(--accent2);text-decoration:none;border:1px solid rgba(98,230,201,.3);border-radius:6px;padding:.3rem .7rem;font-size:.7rem}
+  .foot{margin-top:2.5rem;color:#5c5345;font-size:.66rem;letter-spacing:.12em;text-align:center}
+  a{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="tagline">open agent-skills · the constellation</div>
+  <h1>expand <span class="mesh">mesh</span> + sovereign <span class="fleet">fleet</span></h1>
+  <div class="sub">A coding-agent skill that turns "let's add more nodes" into a
+  measured plan: 20 questions, tagged mesh/fleet/people, ending in ONE
+  actionable next step. Reads real configs — never guesses.</div>
+</header>
+
+<div class="install">
+  <div class="h">install — one line, any agent</div>
+  <span class="row"><code>npx skills add peterlodri-sec/mesh-expand</code> from any repo URL</span>
+  <span class="row"><code>npx skills add https://mesh-expand.vaked.dev</code> from the landing (well-known)</span>
+  <span class="row"><code>entheai --skills add https://mesh-expand.vaked.dev</code> entheai native</span>
+  <span class="row"><code>gh skill install peterlodri-sec/mesh-expand</code> GitHub CLI</span>
+</div>
+
+<div class="grid">
+  <div class="card"><div class="n">measure</div><p>Node table from real configs: role, CPU/GPU, network, utilisation. Honest "unknown" when unknown.</p></div>
+  <div class="card"><div class="n">20 questions</div><p>mesh / fleet / people tagged brainstorm — finds the weak link, the idle GPU, the single point of failure.</p></div>
+  <div class="card"><div class="n">one action</div><p>3–5 ordered actions, each with what/why/how/verify — and exactly ONE marked <b>→ DO THIS FIRST</b>.</p></div>
+</div>
+
+<h2>works in <span class="h">every</span> agent</h2>
+<div class="compat">
+  <span>opencode</span><span>Claude Code</span><span>Crush</span><span>CodeWhale</span><span>entheai</span>
+  <span>Cursor</span><span>GitHub Copilot</span><span>Codex</span><span>Gemini CLI</span><span>Cline</span><span>Zed</span><span>AiderDesk</span><span>+40 more</span>
+</div>
+
+<h2>docs</h2>
+<div class="compat">
+  <a href="/skills/mesh-expand/SKILL.md">SKILL.md</a>
+  <a href="/skills/mesh-expand/references/REFERENCE.md">reference</a>
+  <a href="/skills/mesh-expand/scripts/plan.sh">plan template</a>
+  <a href="/skills/mesh-expand/scripts/measure.sh">measure script</a>
+</div>
+
+<div class="lane">
+  <div class="h">the lovetta lane · keep the weights warm</div>
+  <a href="https://github.com/sponsors/peterlodri-sec" target="_blank" rel="noopener">github sponsor</a>
+  <a href="https://revolut.me/peterjs8be" target="_blank" rel="noopener">revolut</a>
+  <a href="https://wise.com/pay/business/lodripeterjozsef" target="_blank" rel="noopener">wise</a>
+</div>
+
+<div class="foot">· mesh-expand · open agent-skills · MIT · {n+-1-&lt;△&gt;} · 0+1 ·</div>
+</div>
+</body>
+</html>
