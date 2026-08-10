@@ -17,13 +17,13 @@ jobs:
           cp -r .well-known/agent-skills _site/.well-known/agent-skills
           cp docs/index.md _site/docs.md 2>/dev/null || true
           cat > _site/_headers <<'H'
-/.well-known/agent-skills/*
-  Content-Type: application/json
-  Access-Control-Allow-Origin: *
-/skills/*
-  Access-Control-Allow-Origin: *
-  Content-Type: text/plain
-H
+          /.well-known/agent-skills/*
+            Content-Type: application/json
+            Access-Control-Allow-Origin: *
+          /skills/*
+            Access-Control-Allow-Origin: *
+            Content-Type: text/plain
+          H
       - name: deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
