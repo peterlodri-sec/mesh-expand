@@ -1,0 +1,32 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: assemble
+        run: |
+          rm -rf _site && mkdir -p _site/skills _site/.well-known _site/docs
+          cp -r public/* _site/
+          cp -r skills/mesh-expand _site/skills/mesh-expand
+          cp -r .well-known/agent-skills _site/.well-known/agent-skills
+          cp docs/index.md _site/docs.md 2>/dev/null || true
+          cat > _site/_headers <<'H'
+/.well-known/agent-skills/*
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+/skills/*
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain
+H
+      - name: deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name mesh-expand
