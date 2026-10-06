@@ -13,10 +13,13 @@
 > `~/.cftok`, the wrangler OAuth token, and the cloudflared cert token — never
 > this one. `quant-time.vaked.dev` was half-wired (CNAME already pointed at
 > `proposal-vaked-dev.pages.dev`); the domain is now attached to that project.
-> `proxy.vaked.dev` still answers 530 — its CNAME targets tunnel
-> `be96ac5f-…` and the account holds **zero** tunnels; per
-> `quant-lite-prox/README.md` (NUF-190) the intended target is a Mullvad exit
-> host. The minting steps below are kept as reference only.
+> `proxy.vaked.dev` turned out to be one connector away: its CNAME pointed at
+> tunnel `be96ac5f-…` ("proxy-vaked-correct") which existed all along — the
+> keychain token's tunnel list was scope-filtered to zero and hid it (the
+> wrangler OAuth token sees tunnels fine). Since 2026-10-07 a LaunchAgent
+> (`dev.vaked.proxy-tunnel`, wrapper + token file in `~/.cloudflared/`) runs
+> the connector; the name answers through Cloudflare to litellm on `:4000`.
+> The minting steps below are kept as reference only.
 
 ---
 
