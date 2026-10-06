@@ -5,6 +5,19 @@
 > Written for a human who is NOT a Cloudflare admin — you only need to
 > click, never type secrets.
 
+> **RESOLVED 2026-10-07 — no new token was ever needed.** The missing arm was
+> already in the keychain: `security find-generic-password -s CLOUDFLARE_API_TOKEN -w`
+> holds a token with `Zone ▸ DNS ▸ Edit` (verified live: it created the
+> `scifinime.vaked.dev` CNAME; the Pages domain went `active` and the site
+> answers 200). Earlier "no DNS scope" conclusions came from testing
+> `~/.cftok`, the wrangler OAuth token, and the cloudflared cert token — never
+> this one. `quant-time.vaked.dev` was half-wired (CNAME already pointed at
+> `proposal-vaked-dev.pages.dev`); the domain is now attached to that project.
+> `proxy.vaked.dev` still answers 530 — its CNAME targets tunnel
+> `be96ac5f-…` and the account holds **zero** tunnels; per
+> `quant-lite-prox/README.md` (NUF-190) the intended target is a Mullvad exit
+> host. The minting steps below are kept as reference only.
+
 ---
 
 ## The problem, in one picture
